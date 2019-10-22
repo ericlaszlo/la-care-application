@@ -1,0 +1,46 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial;
+	padding: 10px;
+	background: #f1f1f1;
+}
+
+.header {
+	padding: 30px;
+	text-align: center;
+	background: white;
+}
+
+.header h1 {
+	font-size: 25px;
+}
+
+.main {
+	display: grid;
+	grid-template-rows: auto auto auto;
+	grid-gap: 10px;
+	text-align: center;
+}
+
+.footer {
+	padding: 20px;
+	text-align: center;
+	background: #ddd;
+	margin-top: 20px;
+}
+
+.flash{
+	margin: 1em 0;
+	padding: 1em;
+	background: white;
+	border: 1px solid;
+}
+
+#canvas_area {
+	border: 2px solid;
+	background-color: white;
+	margin-top: 20px;
+}

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block body %}
+  <body onload="init()">
+  <div class="header">
+	  <H1>Convolutional Neural Networks</H1>
+	  <p>Draw a digit between 0 and 9 and click 'Predict' to run the model.</p>
+	</div>
+	<div class="main">
+		<div class="item1">
+	  <canvas id="canvas_area" width="280" height="280" onload="init()"></canvas>
+		</div>
+		<div class="item2">
+	    <input type="button" value="Predict" id="btn" size="30" onclick="fetchdata()">
+	    <input type="button" value="clear" id="clr" size="23" onclick="erase()">
+	    <label>Brush Size:</label>
+	    <select id="brush_select" onchange="SetBrushSize()">
+		    <option value="20">10</option>
+	      <option value="30" selected>20</option>
+		    <option value="50">40</option>
+		    <option value="80">60</option>
+	    </select>
+     </div>
+		<div class="item3">
+			<p>The prediction is <label id='predicted_digit' name='predicted_digit'>{{prediction}}</label>  (Score = <label id='predicted_score' name='predicted_score'>{{score}}</label>)</p>
+		</div>
+	</div>
+
+	<div class="footer">
+	</div>
+	</body>
+{% endblock %}
+
+{% block localscripts %}
+	<script>
+		function update_dashboard(prediction, score){
+			predicted_digit.innerHTML = prediction;
+			predicted_score.innerHTML = score;
+		}
+
+    function fetchdata() {
+			$.ajax({
+				type: "POST",
+				url:'{{ url_for('predict.background_process') }}',
+				data:{'drawing_data': canvas_area.toDataURL()},
+				success: function(data) {
+					update_dashboard(data.prediction, data.score);
+				}
+			});
+		}
+	</script>
+{% endblock %}

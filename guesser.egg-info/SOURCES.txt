@@ -1,0 +1,14 @@
+MANIFEST.in
+setup.py
+guesser/__init__.py
+guesser/predict.py
+guesser.egg-info/PKG-INFO
+guesser.egg-info/SOURCES.txt
+guesser.egg-info/dependency_links.txt
+guesser.egg-info/not-zip-safe
+guesser.egg-info/requires.txt
+guesser.egg-info/top_level.txt
+guesser/static/home.js
+guesser/static/style.css
+guesser/templates/base.html
+guesser/templates/predict/home.html
