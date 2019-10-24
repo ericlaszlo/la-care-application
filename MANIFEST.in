@@ -1,3 +1,0 @@
-graft guesser/static
-graft guesser/templates
-global-exclude *.pyc
