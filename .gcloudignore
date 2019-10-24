@@ -1,0 +1,7 @@
+NOTES
+build/
+dist/
+guesser.egg-info
+instance/
+setup.py
+venv/
