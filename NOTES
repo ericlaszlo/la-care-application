@@ -1,0 +1,8 @@
+To run, in the la_care_application folder, run the following:
+$ export FLASK_APP=guesser
+$ export FLASK_ENV=development
+$ python application.py
+
+
+Also, you can find the code for fitting the model at:
+    https://github.com/ericlaszlo/la-care-model
